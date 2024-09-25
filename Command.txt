@@ -11,37 +11,3 @@ docker system prune //delete all container
 docker run -p 8800:80 nginx
 
 docker run -d -p 7800:80 nginx
-
-docker pull wordpress
-docker pull mysql:5.7
-docker pull phpmyadmin/phpmyadmin
-
-docker network create wordpress
-docker network ls
-**คำสั่งลบ docker network rm wordpress
-
-docker run --name mysql --network wordpress -e MYSQL_ROOT_PASSWORD=1111 -e MYSQL_DATABASE=wordpress_db -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=wordpress -d mysql:5.7
-docker run --name pma --network wordpress -p 8888:80 -e PMA_ARBITRARY=1 -d phpmyadmin/phpmyadmin
-docker run -d --name wordpress --network wordpress -p 888:80 -e WORDPRESS_DB_HOST=mysql -e WORDPRESS_DB_USER=wordpress -e WORDPRESS_DB_PASSWORD=wordpress -e WORDPRESS_DB_NAME=wordpress_db wordpress
-
-แบบ 1
-docker exec -it pma sh
-apt-get update
-apt-get install vim
-vi a.text กด i พิมพ์ข้อมูล กด esc ออก พิมพ์ :wq enter save
-ls
-cat a.text
-
-แบบ 2
-docker volume ls
-docker volume create wp_volume
-docker volume create mysql_volume
-docker volume rm wp_volume mysql_volume
-
-สร้างเอง
-docker volume create wp_volume
-docker volume create mysql_volume
-docker network create wordpress02
-docker network ls
-docker volume ls
-
