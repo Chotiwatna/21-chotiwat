@@ -20,3 +20,7 @@ kubectl delete all --all //ลบทั้งหมด
 
 
 kubectl delete deployments client-deployment
+
+02/10/67
+http://localhost:30002/api/health
+docker pull mongo
