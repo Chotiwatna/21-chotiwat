@@ -1,0 +1,37 @@
+01/10/67
+
+kubectl get all //see all
+
+kubectl get pods 
+
+สร้าง
+kubectl apply -f sample-pod.yml
+
+kubectl apply -f .
+
+kubectl get services
+
+kubectl logs client-pod
+
+
+ลบ
+kubectl delete pods client-pod
+kubectl delete all --all //ลบทั้งหมด
+
+
+kubectl delete deployments client-deployment
+
+02/10/67
+http://localhost:30002/api/health
+docker pull mongo
+
+03/10/67
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/cloud/deploy.yaml
+
+สร้างไฟล์ ingress.yml
+
+http://todo.com/
+
+http://todo.com/api/todo
+
+
